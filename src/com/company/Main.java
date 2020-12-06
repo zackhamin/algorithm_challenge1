@@ -1,5 +1,7 @@
 package com.company;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Arrays;
 
 public class Main {
@@ -9,27 +11,28 @@ public class Main {
 
         int a[] = {1, 2, 3, 4,5,6,7,8,9,10};
         reverseArray(a);
+        countingValleys(8,"DDUDUUDD");
     }
 
-    //    public static int countingValleys(int steps, String path) {
-//        int stepsCount = 0;
-//        int valleysClimbed = 0;
-//
-//        char[] pathArray = path.toCharArray();
-//
-//        for (int i = 0; i < pathArray.length; i++) {
-//            if (pathArray[i] == 'U') {
-//                stepsCount += 1;
-//                if (stepsCount == 0) {
-//                    valleysClimbed += 1;
-//                }
-//            } else {
-//                stepsCount -= 1;
-//            }
-//        }
-//        System.out.println(valleysClimbed);
-//        return valleysClimbed;
-//    }
+        public static int countingValleys(int steps, String path) {
+        int stepsCount = 0;
+        int valleysClimbed = 0;
+
+        char[] pathArray = path.toCharArray();
+
+        for (int i = 0; i < pathArray.length; i++) {
+            if (pathArray[i] == 'U') {
+                stepsCount += 1;
+                if (stepsCount == 0) {
+                    valleysClimbed += 1;
+                }
+            } else {
+                stepsCount -= 1;
+            }
+        }
+        System.out.println(valleysClimbed);
+        return valleysClimbed;
+    }
     static int[] reverseArray(int[] a) {
 
         int i = 0;
